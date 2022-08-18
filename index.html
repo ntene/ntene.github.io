@@ -9,26 +9,8 @@
 </head>
 <body>
 	<button onclick="myFunction()">Start test</button>
+    <a href="slack://">Open slack</a>
 	<script>
-		var xhttp = new XMLHttpRequest()
-		var result = {}
-		var url = "https://140.112.30.35:7890/alert"
-		function handleMotionEvent(event) {
-
-		    var x = event.accelerationIncludingGravity.x;
-		    var y = event.accelerationIncludingGravity.y;
-		    var z = event.accelerationIncludingGravity.z;
-		    result[Date.now().toString(10)] = [x, y, z];
-		    
-		}
-		window.addEventListener("devicemotion", handleMotionEvent, true);
-		fetch(url, {
-				method: 'POST',
-				body: JSON.stringify(result),
-				headers: {
-					'Content-type': 'application/json; charset=UTF-8'
-				}
-		})
 	</script>
 </body>
 </html>
